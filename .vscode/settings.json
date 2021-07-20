@@ -1,0 +1,12 @@
+{
+  "cSpell.ignoreWords": [
+    "dtos",
+    "middlewares",
+    "otplib",
+    "postgres",
+    "totp",
+    "tsyringe",
+    "typeorm",
+    "varchar"
+  ]
+}
