@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn ./src/shared/infra/http/server.ts",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
+    "lint:fix": "eslint --fix . --ext ts,tsx",
+    "test": "cross-env NODE_ENV=test jest --runInBand --detectOpenHandles"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "bcryptjs": "^2.4.3",
