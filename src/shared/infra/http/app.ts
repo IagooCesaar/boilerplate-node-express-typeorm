@@ -5,8 +5,10 @@ import "@shared/container";
 
 import express, { Request, Response } from "express";
 import path from "path";
+import swaggerUi from "swagger-ui-express";
 import { createConnection } from "typeorm";
 
+import swaggerDoc from "../../../docs";
 import { handlingErrors } from "./middlewares/handlingErrors";
 import { router } from "./routes";
 
@@ -31,6 +33,14 @@ app.use("/api/coverage", (request: Request, response: Response) => {
       "lcov-report",
       "index.html"
     )
+  );
+});
+
+swaggerDoc.then((doc) => {
+  app.use(
+    "/api/docs",
+    swaggerUi.serve,
+    swaggerUi.setup(doc, { explorer: true })
   );
 });
 
