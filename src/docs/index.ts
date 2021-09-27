@@ -3,7 +3,11 @@
 import { convertGlobPaths } from "@utils/convertGlobPaths";
 import { deepMerge } from "@utils/deepMerge";
 
-const docFiles = ["./src/docs/*.doc.ts", "./src/modules/**/*.doc.ts"];
+const docFiles = [
+  "./src/docs/*.doc.ts",
+  "./src/docs/**/*.doc.ts",
+  "./src/modules/**/*.doc.ts",
+];
 
 const makeDoc = async () => {
   const doc = {};
